@@ -166,7 +166,7 @@ RUN apt-get clean \
 
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ext_dir/nginx /etc/nginx
-COPY /usr/share/nginx/html /var/www/html/
+COPY /usr/share/nginx/html/ /var/www/html
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
